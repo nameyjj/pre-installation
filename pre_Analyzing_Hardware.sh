@@ -13,7 +13,7 @@
   (echo "Core number     : `cat /proc/cpuinfo|grep -i "model name"|wc -l`") >/dev/tty1
 
 #第二部分，显示单根内存大小及总内存容量
-  echo_info "2. Memory Detail info:" //
+  echo_info "2. Memory Detail info:" 
   dmidecode --type memory|grep -i "Size:"|grep -i "MB" > /dev/tty1
   (echo "Totle Size : `dmidecode --type memory|grep -i Size|grep -i MB|awk 'BEGIN{totle=0}{totle+=$2}END{print totle}'` MB") > /dev/tty1
 
